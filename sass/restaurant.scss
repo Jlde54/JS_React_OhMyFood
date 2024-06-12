@@ -1,0 +1,144 @@
+@import "./variables.scss";
+
+@import "./mixins.scss";
+
+// Partie Header
+
+.header {
+    position: relative;
+
+    &__arrow-left {
+        @include flexContainer(column, center, center);
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        width: 30px;
+        height: 30px;
+
+        &-icon {
+            @include fontStyle(25px, 900);
+            color: $main-color;
+        }
+    }
+}
+
+// Partie menu
+
+.partial-underline {
+    text-decoration-color: $underline-menu-color ;
+    text-decoration-line: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 10px;
+}
+.menu {
+
+    &__img {
+        object-fit: cover;
+        height: 275px;
+        width: 100%;
+    }
+
+    &__container {
+        border-top-left-radius: 40px;
+        border-top-right-radius: 40px;
+        background-color: $background-functioning-color;
+        position: relative;
+        top:-40px;
+        padding: 15px;
+
+        .restaurant__card-like {
+            position: absolute;
+            right: 30px;
+            top: 50px;
+        }
+    }
+
+    &__title {
+        @include fontStyle(28px, 400);
+        font-family: $logo-font;
+        text-align: left;
+        margin-top: 30px;
+    }
+
+    &__content {
+        @include flexContainer(column, center, stretch);
+
+        &-plats {
+            @include flexContainer(column, center, left);
+        }
+    
+        &-title {
+            @include fontStyle(16px, 300);
+            text-transform: uppercase;
+        }
+
+        &-plat {
+            @include flexContainer(row, stretch, stretch);
+            box-shadow: 0px 4px 15px 0px rgba(0, 0, 0,0.1);
+            padding: 15px;
+            border-radius: 15px;
+            width: 100%;
+            margin: 10px 0;
+            position: relative;
+
+            &:hover .menu__content-select {
+                transform: translateY(0px);
+            }
+
+            &:hover .menu__content-details {
+                width: calc(100% - 59px);
+            }
+        }
+    
+        &-details {
+            @include flexContainer(column, center, left);
+            cursor: pointer;
+            width: 100%;
+            transition: width 400ms ease-in-out;
+            
+
+            &-name {
+                @include fontStyle(18px, 500);
+                margin-bottom: 10px;
+            }
+
+            &-desc-price {
+                @include flexContainer(row, space-between, center);
+                
+            }
+
+            &-desc {
+                @include fontStyle(15px, 300);
+            }
+
+            &-price {
+                @include fontStyle(15px, 700);
+            }
+        }
+
+        &-select {
+            @include flexContainer(column, center, center);
+            width: 59px;
+            height: 100%;
+            background-color: $underline-menu-color;
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+            transition: transform 400ms ease-in-out;
+            color: $text-button-color;
+            transform: translateX(75px);
+            position: absolute;
+            right: 0;
+            top: 0;
+
+            i {
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+.explore__btn {
+    margin-top: 30px;
+    width: 50%;
+}
+

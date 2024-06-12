@@ -1,58 +1,38 @@
-$header-color : #101010;
-$location-color : #353535;
-$main-color : #000000;
-$text-button-color : #FFFFFF;
-$button-color : #9356DC;
-$badge-color : #008766;
-$like-empty-color : #101010;
-$button-linear-color : #FF79DA;
-$underline-menu-color : #99E2D0;
-$background-location-color : #EAEAEA;
-$background-functioning-color : #F6F6F6;
-$icon-color : #7E7E7E;
-$background-btn-color: linear-gradient($button-linear-color, $button-color);
-$background-like-color: linear-gradient($button-color, $button-linear-color);
+@import "./variables.scss";
 
-$logo-font : Shrikhand, serif;
-$main-font : Roboto, sans-serif;
-
-@mixin flexContainer($direction, $justify, $align) {
-    display: flex;
-    flex-direction: $direction;
-    justify-content: $justify;
-    align-items: $align;
-}
-
-@mixin fontStyle($fontsize, $fontweight){
-    font-size: $fontsize;
-    font-weight: $fontweight;
-}
+@import "./mixins.scss";
 
 * {
     font-family: $main-font;
     box-sizing: border-box;
 }
 body {
+    @include flexContainer(column, stretch, stretch);
     margin: 0;
+    max-width: 1440px;
+    min-width: 320px;
+    box-sizing: border-box;
+    margin: auto
 }
 
 // Partie Header
 .header {
-    
+
     &__logo {
         @include fontStyle(2em, 400);
         font-family: $logo-font;
         font-style: normal;
         text-align: center;
     }
+}
 
-    &__location {
-        @include flexContainer(row, center, center);
-        gap: 17px;
-        background-color: $background-location-color;
-        padding: 10px;
-        box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25), 0px -1px 4px 0px rgba(0,0,0,0.25);
-    }
+// Partie Localisation
+.location {
+    @include flexContainer(row, center, center);
+    gap: 17px;
+    background-color: $background-location-color;
+    padding: 10px;
+    box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25), 0px -1px 4px 0px rgba(0,0,0,0.25);
 
     &__icon {
         min-width: 12px;
@@ -67,7 +47,7 @@ body {
     }
 }
 
-.main {
+.container {
     margin: 0 25px;
 }
 
@@ -89,8 +69,7 @@ body {
         margin: auto;
         @include fontStyle(16px, 500);
         color: $text-button-color;
-        height: 50px;
-        padding: 13px;
+        padding: 20px;
         text-align: center;
         background-color: $button-color;
         background-image: $background-btn-color;
@@ -130,8 +109,9 @@ body {
 
         &:hover {
             cursor: pointer;
-            // opacity: 0.7;
-            // box-shadow: 0px 4px 15px 5px rgba(0,0,0,0.15);
+            transition : all 200ms;
+            opacity: 0.7;
+            box-shadow: 0px 4px 15px 5px rgba(0,0,0,0.15);
 
             .functioning__icon {
                 color: $button-color;
@@ -189,6 +169,8 @@ body {
 
     &__card-content {
         position: relative;
+        padding-left: 20px
+
     }
 
     &__card-title {
@@ -275,9 +257,50 @@ body {
     }
 }
 
+@media screen and (min-width: 768px) {
+    .functioning {
 
+        &__btns {
+            @include flexContainer(row, space-between, center);
+        }
 
+        &__btn {
+            width: 30%;
+        }
+    }
 
+    .restaurant {
+        &__card-img {
+            height: 250px
+        }
+    }
+
+    .footer {
+        @include flexContainer(row-reverse, right, center);
+        gap: 75px;
+
+        &__items {
+            @include flexContainer(row, right, center);
+            gap: 20px;
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .restaurants {
+
+        &__cards {
+            @include flexContainer(row, space-between, center);
+            flex-wrap: wrap;
+            gap: 75px;
+        }
+    }
+
+    .restaurant {
+            width: 45%;
+    }
+
+}
 
 
 

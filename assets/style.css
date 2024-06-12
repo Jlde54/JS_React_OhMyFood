@@ -5,7 +5,25 @@
 }
 
 body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: stretch;
+      -ms-flex-pack: stretch;
+          justify-content: stretch;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
   margin: 0;
+  max-width: 1440px;
+  min-width: 320px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: auto;
 }
 
 .header__logo {
@@ -15,7 +33,8 @@ body {
   font-style: normal;
   text-align: center;
 }
-.header__location {
+
+.location {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -35,11 +54,11 @@ body {
   -webkit-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px -1px 4px 0px rgba(0, 0, 0, 0.25);
           box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px -1px 4px 0px rgba(0, 0, 0, 0.25);
 }
-.header__icon {
+.location__icon {
   min-width: 12px;
   min-height: 16px;
 }
-.header__input {
+.location__input {
   border: none;
   background-color: #EAEAEA;
   width: 112px;
@@ -47,7 +66,7 @@ body {
   font-weight: 500;
 }
 
-.main {
+.container {
   margin: 0 25px;
 }
 
@@ -67,8 +86,7 @@ body {
   font-size: 16px;
   font-weight: 500;
   color: #FFFFFF;
-  height: 50px;
-  padding: 13px;
+  padding: 20px;
   text-align: center;
   background-color: #9356DC;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#FF79DA), to(#9356DC));
@@ -130,6 +148,11 @@ body {
 }
 .functioning__btn:hover {
   cursor: pointer;
+  -webkit-transition: all 200ms;
+  transition: all 200ms;
+  opacity: 0.7;
+  -webkit-box-shadow: 0px 4px 15px 5px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 4px 15px 5px rgba(0, 0, 0, 0.15);
 }
 .functioning__btn:hover .functioning__icon {
   color: #9356DC;
@@ -203,6 +226,7 @@ body {
 }
 .restaurant__card-content {
   position: relative;
+  padding-left: 20px;
 }
 .restaurant__card-title {
   font-size: 18px;
@@ -306,4 +330,83 @@ body {
 }
 .footer__text {
   margin: 5px 0;
+}
+
+@media screen and (min-width: 768px) {
+  .functioning__btns {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .functioning__btn {
+    width: 30%;
+  }
+  .restaurant__card-img {
+    height: 250px;
+  }
+  .footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    -webkit-box-pack: right;
+        -ms-flex-pack: right;
+            justify-content: right;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 75px;
+  }
+  .footer__items {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: right;
+        -ms-flex-pack: right;
+            justify-content: right;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 20px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .restaurants__cards {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    gap: 75px;
+  }
+  .restaurant {
+    width: 45%;
+  }
 }/*# sourceMappingURL=style.css.map */
