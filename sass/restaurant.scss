@@ -5,13 +5,12 @@
 // Partie Header
 
 .header {
-    position: relative;
 
     &__arrow-left {
         @include flexContainer(column, center, center);
         position: absolute;
         top: 25px;
-        left: 25px;
+        left: 3vw;
         width: 30px;
         height: 30px;
 
@@ -30,7 +29,35 @@
     text-decoration-thickness: 3px;
     text-underline-offset: 10px;
 }
+
+.ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.explore__btn {
+    margin-top: 30px;
+    width: 186px;
+}
+
+.fadein1 {
+    animation-name: fadein;
+    animation-duration: 2s;
+}
+
+.fadein2 {
+    animation-name: fadein;
+    animation-duration: 4s;
+}
+
+.fadein3 {
+    animation-name: fadein;
+    animation-duration: 6s;
+}
+
 .menu {
+    @include flexContainer(column, center, center);
 
     &__img {
         object-fit: cover;
@@ -45,6 +72,7 @@
         position: relative;
         top:-40px;
         padding: 15px;
+        width: 100%;
 
         .restaurant__card-like {
             position: absolute;
@@ -53,11 +81,16 @@
         }
     }
 
+    &__title-like {
+        @include flexContainer(row, space-between, center);
+    }
+
     &__title {
         @include fontStyle(28px, 400);
         font-family: $logo-font;
         text-align: left;
         margin-top: 30px;
+        margin-right: 40px;
     }
 
     &__content {
@@ -80,9 +113,10 @@
             width: 100%;
             margin: 10px 0;
             position: relative;
+            overflow: hidden;
 
             &:hover .menu__content-select {
-                transform: translateY(0px);
+                transform: translateY(0);
             }
 
             &:hover .menu__content-details {
@@ -95,7 +129,6 @@
             cursor: pointer;
             width: 100%;
             transition: width 400ms ease-in-out;
-            
 
             &-name {
                 @include fontStyle(18px, 500);
@@ -104,7 +137,7 @@
 
             &-desc-price {
                 @include flexContainer(row, space-between, center);
-                
+                gap: 10px;
             }
 
             &-desc {
@@ -118,17 +151,17 @@
 
         &-select {
             @include flexContainer(column, center, center);
+            position: absolute;
+            right: 0;
+            top: 0;
             width: 59px;
             height: 100%;
+            color: $text-button-color;
             background-color: $underline-menu-color;
             border-top-right-radius: 15px;
             border-bottom-right-radius: 15px;
             transition: transform 400ms ease-in-out;
-            color: $text-button-color;
-            transform: translateX(75px);
-            position: absolute;
-            right: 0;
-            top: 0;
+            transform: translateX(100%);
 
             i {
                 font-size: 20px;
@@ -137,8 +170,21 @@
     }
 }
 
-.explore__btn {
-    margin-top: 30px;
-    width: 50%;
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
+@media screen and (min-width: 1024px) {
+    .menu {
+        // align-items: center;
+
+        &__container {
+            max-width: 1055px;
+        }
+    }
+}
