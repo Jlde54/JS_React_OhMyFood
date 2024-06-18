@@ -22,7 +22,6 @@ body {
 }
 
 // Partie Loader
-
 .cont-loader {
     position: absolute;
     left: calc(50% - 75px);
@@ -35,9 +34,10 @@ body {
     border: 16px solid $background-functioning-color;
     border-radius: 50%;
     border-top: 16px solid $button-color;
+    border-bottom: 16px solid $button-color;
     width: 120px;
     height: 120px;
-    animation: rotate 2s linear 2;
+    animation: rotate 2s linear infinite;
 }
 
 .cont-loader::after {
@@ -50,17 +50,16 @@ body {
   }
 
   @keyframes opacity-reverse {
-    0% { opacity: 1; }
-    100% { opacity: 0; }
+    from { opacity: 1; }
+    to { opacity: 0; }
   }
   
   @keyframes rotate {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
   }
 
 // Partie Header
-
 .header {
 
     &__logo {
@@ -72,7 +71,6 @@ body {
 }
 
 // Partie Localisation
-
 .location {
     @include flexContainer(row, center, center);
     gap: 17px;
@@ -99,7 +97,6 @@ body {
 }
 
 // Partie Explorez les restaurants
-
 .explore {
 
     &__title {
@@ -134,7 +131,6 @@ body {
 }
 
 // Partie Fonctionnement
-
 .functioning {
 
     &__title {
@@ -142,14 +138,14 @@ body {
     }
 
     &__btns {
-        @include flexContainer(column, center, left);
+        @include flexContainer(column, center, stretch);
         gap: 20px;
     }
 
     &__btn {
         @include flexContainer(row, left, center);
         gap: 25px;
-        padding: 20px 5px 20px 30px;
+        padding: 40px 5px 40px 30px;
         background-color: $background-functioning-color;
         border-radius: 20px;
         border: none;
@@ -191,12 +187,11 @@ body {
 }
 
 // Partie Restaurants
-
 .restaurants {
     margin: 60px 0;
 
     &__cards {
-        @include flexContainer(column, space-between, left);
+        @include flexContainer(column, space-between, stretch);
         gap: 20px;
     }
     
@@ -256,6 +251,7 @@ body {
         &:hover {
             .fa-regular {
                 display: none;
+                animation: opacity-reverse 1s;
             }
 
             .fa-solid {
@@ -278,7 +274,7 @@ body {
         @include fontStyle(14px, 500);
         padding: 10px;
         border-radius: 2px;
-        box-shadow: 0 2 4 0 rgba(0, 0, 0, 0.15);
+        box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
         top: 10px;
         right: 10px;
     }
@@ -318,6 +314,9 @@ body {
     }
 }
 
+//Media queries
+
+// Tablette
 @media screen and (min-width: 768px) {
     .functioning {
 
@@ -347,6 +346,7 @@ body {
     }
 }
 
+// Desktop
 @media screen and (min-width: 1024px) {
     .main {
 

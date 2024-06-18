@@ -3,7 +3,6 @@
 @import "./mixins.scss";
 
 // Partie Header
-
 .header {
 
     &__arrow-left {
@@ -21,8 +20,7 @@
     }
 }
 
-// Partie menu
-
+// Soulignement partiel du titre des sections du menu
 .partial-underline {
     text-decoration-color: $underline-menu-color ;
     text-decoration-line: underline;
@@ -30,17 +28,20 @@
     text-underline-offset: 10px;
 }
 
+// Affichage d'une ellipse qd le texte dépasse
 .ellipsis {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
+// Formattage du bouton "Commander"
 .explore__btn {
     margin-top: 30px;
     width: 186px;
 }
 
+// Animation fade-in sur le menu
 .fadein1 {
     animation-name: fadein;
     animation-duration: 2s;
@@ -56,6 +57,7 @@
     animation-duration: 6s;
 }
 
+// Partie menu
 .menu {
     @include flexContainer(column, center, center);
 
@@ -97,7 +99,7 @@
         @include flexContainer(column, center, stretch);
 
         &-plats {
-            @include flexContainer(column, center, left);
+            @include flexContainer(column, center, stretch);
         }
     
         &-title {
@@ -125,7 +127,7 @@
         }
     
         &-details {
-            @include flexContainer(column, center, left);
+            @include flexContainer(column, center, stretch);
             cursor: pointer;
             width: 100%;
             transition: width 400ms ease-in-out;
@@ -179,9 +181,11 @@
     }
 }
 
+// Media queries
+
+// Desktop
 @media screen and (min-width: 1024px) {
     .menu {
-        // align-items: center;
 
         &__container {
             max-width: 1055px;
