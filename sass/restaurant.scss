@@ -68,8 +68,7 @@
     }
 
     &__container {
-        border-top-left-radius: 40px;
-        border-top-right-radius: 40px;
+        @include border-radius-topleft-topright(40px);
         background-color: $background-functioning-color;
         position: relative;
         top:-40px;
@@ -160,8 +159,7 @@
             height: 100%;
             color: $text-button-color;
             background-color: $underline-menu-color;
-            border-top-right-radius: 15px;
-            border-bottom-right-radius: 15px;
+            @include border-radius-topright-bottomright(15px);
             transition: transform 400ms ease-in-out;
             transform: translateX(100%);
 

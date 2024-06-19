@@ -9,3 +9,17 @@
     font-size: $fontsize;
     font-weight: $fontweight;
 }
+
+@mixin border-radius-topleft-topright($radius) {
+    border-top-left-radius: $radius;
+    border-top-right-radius: $radius;
+}
+
+@mixin border-radius-topright-bottomright($radius) {
+    border-top-right-radius: $radius;
+    border-bottom-right-radius: $radius;
+}
+
+@mixin box-shadow($offsetX, $offsetY, $blur, $spread, $color) {
+    box-shadow: $offsetX $offsetY $blur $spread $color;
+}
