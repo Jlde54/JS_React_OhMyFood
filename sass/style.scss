@@ -76,7 +76,8 @@ body {
     gap: 17px;
     background-color: $background-location-color;
     padding: 10px;
-    @include box-shadow(0px 4px 4px 0px rgba(0,0,0,0.25)); @include box-shadow(0px -1px 4px 0px rgba(0,0,0,0.25));
+    @include box-shadow(0px, 4px, 4px, 0px, rgba(0,0,0,0.25)); 
+    @include box-shadow(0px, -1px, 4px, 0px, rgba(0,0,0,0.25));
 
     &__icon {
         min-width: 12px;
@@ -121,11 +122,11 @@ body {
         border: none;
         border-radius: 25px;
         transition : all 200ms;
-        @include box-shadow( 0px 4px 10px 0px rgba(0,0,0,0.25));
+        @include box-shadow(0px, 4px, 10px, 0px, rgba(0,0,0,0.25));
 
         &:hover {
             opacity: 0.7;
-            @include box-shadow(0px 4px 10px 5px rgba(0,0,0,0.25));
+            @include box-shadow(0px, 4px, 10px, 5px, rgba(0,0,0,0.25));
         }
     }
 }
@@ -145,18 +146,20 @@ body {
     &__btn {
         @include flexContainer(row, left, center);
         gap: 25px;
-        padding: 40px 5px 40px 30px;
+        height: 72px;
+        padding-left: 30px;
+        padding-right: 5px;
         background-color: $background-functioning-color;
         border-radius: 20px;
         border: none;
-        @include box-shadow(0px 4px 15px 0px rgba(0, 0, 0, 00.15));
+        @include box-shadow(0px, 4px, 15px, 0px, rgba(0, 0, 0, 00.15));
         position: relative;
 
         &:hover {
             cursor: pointer;
             transition : all 200ms;
             opacity: 0.7;
-            @include box-shadow(0px 4px 15px 5px rgba(0,0,0,0.15));
+            @include box-shadow(0px, 4px, 15px, 5px, rgba(0,0,0,0.15));
 
             .functioning__icon {
                 color: $button-color;
@@ -201,7 +204,7 @@ body {
     color: $main-color;
 
     &:hover {
-        @include box-shadow(0px 4px 15px 5px rgba(0,0,0,0.15));
+        @include box-shadow(0px, 4px, 15px, 5px, rgba(0,0,0,0.15));
     }
 
     &__card {
@@ -273,7 +276,7 @@ body {
         @include fontStyle(14px, 500);
         padding: 10px;
         border-radius: 2px;
-        @include box-shadow(0px 2px 4px 0px rgba(0, 0, 0, 0.15));
+        @include box-shadow(0px, 2px, 4px, 0px, rgba(0, 0, 0, 0.15));
         top: 10px;
         right: 10px;
     }
