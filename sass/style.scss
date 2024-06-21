@@ -11,7 +11,6 @@ body {
     @include flexContainer(column, stretch, stretch);
     margin: 0;
     box-sizing: border-box;
-    margin: auto;
 }
 
 .main-container {
@@ -251,18 +250,18 @@ body {
         .fa-solid {
             display: none;
             opacity: 0;
-            animation: opacity 1s;
+            
         }
 
         &:hover {
             .fa-regular {
                 display: none;
-                animation: opacity-reverse 1s;
+                animation: opacity-reverse 1.5s;
             }
 
             .fa-solid {
                 display: inline;
-                opacity: 1;
+                animation: opacity 1.5s;
                 background-image: $background-like-color;
                 background-clip:text;
                 color: transparent;
