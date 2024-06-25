@@ -88,9 +88,9 @@
   border-top-left-radius: 40px;
   border-top-right-radius: 40px;
   background-color: #F6F6F6;
+  margin-top: -40px;
   position: relative;
-  top: -40px;
-  padding: 15px;
+  padding: 15px 15px 35px 15px;
   width: 100%;
 }
 .menu__container .restaurant__card-like {
@@ -180,8 +180,8 @@
   overflow: hidden;
 }
 .menu__content-plat:hover .menu__content-select {
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
 }
 .menu__content-plat:hover .menu__content-details {
   width: calc(100% - 59px);

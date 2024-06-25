@@ -20,6 +20,10 @@
     border-bottom-right-radius: $radius;
 }
 
+@mixin border-radius-all($radius) {
+    border-radius: $radius;
+}
+
 @mixin box-shadow($offsetX, $offsetY, $blur, $spread, $color) {
     box-shadow: $offsetX $offsetY $blur $spread $color;
 }

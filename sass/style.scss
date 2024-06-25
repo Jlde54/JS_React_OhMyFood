@@ -90,11 +90,6 @@ body {
     }
 }
 
-.container {
-    margin: 0 25px;
-    max-width: 1055px;
-}
-
 // Partie Explorez les restaurants
 .explore {
     background-color: $background-functioning-color;
@@ -136,6 +131,7 @@ body {
 
 // Partie Fonctionnement
 .functioning {
+    padding: 0 25px;
 
     &__title {
         margin-top: 50px;
@@ -193,8 +189,15 @@ body {
 }
 
 // Partie Restaurants
+
+.restaurants-back {
+    background-color: $background-functioning-color;
+}
+
 .restaurants {
-    margin: 60px 0;
+    padding: 30px 30px 60px 30px;
+    width: 100%;
+    margin-top: 60px;
 
     &__cards {
         @include flexContainer(column, space-between, stretch);
@@ -205,11 +208,9 @@ body {
 .restaurant {
     text-decoration: none;
     color: $main-color;
-    transition : box-shadow 200ms;
-
-    &:hover {
-        @include box-shadow(0px, 4px, 15px, 5px, rgba(0,0,0,0.15));
-    }
+    background-color: $text-button-color;
+    @include border-radius-all(15px);
+    @include box-shadow(0px, 4px, 15px, 0px, rgba(0,0,0,0.10));
 
     &__card {
         position: relative;
@@ -251,7 +252,6 @@ body {
         .fa-solid {
             display: none;
             opacity: 0;
-            
         }
 
         &:hover {
@@ -269,7 +269,6 @@ body {
                 -webkit-background-clip:text;
                 -moz-background-clip: text;
             }
-            
         }
     }
 
@@ -357,16 +356,23 @@ body {
     .main {
 
         &__container {
-        @include flexContainer(column, center, center);
+        @include flexContainer(column, center, stretch);
         }
     }
 
+    .functioning {
+        max-width: 1055px;
+        margin: auto;
+    }
+
     .restaurants {
+        max-width: 1055px;
+        margin-inline: auto;
 
         &__cards {
             @include flexContainer(row, space-between, center);
             flex-wrap: wrap;
-            gap: 75px;
+            gap: 55px;
         }
     }
 
